@@ -2,18 +2,22 @@
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
+    "laracasts/generators": "dev-master",
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "Laravelcollective/html": "^5.5",
         "fideloper/proxy": "~3.3",
+        "fzaninotto/faker": "^1.7",
+        "illuminate/html": "^5.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "~1.0",
+        "laracasts/generators": "^1.1",
+        "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~6.0"
     },
     "autoload": {
@@ -28,7 +32,8 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": ["tests/utilities/functions.php"]
     },
     "extra": {
         "laravel": {

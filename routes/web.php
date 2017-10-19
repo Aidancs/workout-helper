@@ -1,5 +1,7 @@
 <?php
 
+use App\Exercise;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +16,33 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['as' => 'user.'], function () {
+
+    Route::get('/user')
+        ->name('index')
+        ->uses('UserController@index');
+
+    Route::get('/user')
+        ->name('store')
+        ->uses('UserController@store');
+
+    Route::get('/user/{user}')
+        ->name('update')
+        ->uses('UserController@update');
+
+        Route::get('/user/{user}/remove')
+        ->name('remove')
+        ->uses('UserController@remove');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('workouts', 'WorkoutsController@index')->name('workouts');
+// Route::get('workouts/{workout}', 'WorkoutsController@show')->name('workout.show');
+
+Route::resource('exercises', 'ExercisesController');
+Route::resource('workouts', 'WorkoutsController');
+route::post('/workouts/{workout}/exercises', 'ExercisesController@store');
