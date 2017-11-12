@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading" style="text-align: center">{{ $workout->workout_name }}</div>
+                <div class="panel-heading" style="text-align: center">{{ $workout->workout_date }}</div>
                 <div class="panel-body" style="text-align: center">
                     {{ $workout->description }}
                 </div>

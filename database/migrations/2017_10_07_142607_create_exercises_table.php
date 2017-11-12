@@ -25,7 +25,7 @@ class CreateExercisesTable extends Migration
 
         Schema::table('exercises', function (Blueprint $table) {
             $table->integer('workout_id')->nullable();
-            $table->foreign('workout_id')->references('id')->on('workouts');
+            $table->foreign('workout_id')->references('id')->on('workout');
         });
     }
 
