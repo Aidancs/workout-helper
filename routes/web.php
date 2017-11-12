@@ -44,5 +44,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('workouts/{workout}', 'WorkoutsController@show')->name('workout.show');
 
 Route::resource('exercises', 'ExercisesController');
-Route::resource('workouts', 'WorkoutsController');
-route::post('/workouts/{workout}/exercises', 'ExercisesController@store');
+Route::resource('workout', 'WorkoutController');
+route::post('/workout/{workout}/exercises', 'ExercisesController@store');

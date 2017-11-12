@@ -8,14 +8,14 @@
   <body>
     <div class="container">
       <h2>Edit a Workout</h2><br  />
-      <form method="post" action="{{action('WorkoutsController@update', $id)}}">
+      <form method="post" action="{{action('WorkoutController@update', $id)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <label for="workout_name">Workout Name:</label>
-            <input type="text" class="form-control" name="workout_name" value="{{$workout->workout_name}}">
+            <label for="workout_date">Workout Date:</label>
+            <input type="text" class="form-control" name="workout_date" value="{{$workout->workout_date}}">
           </div>
         </div>
         <div class="row">

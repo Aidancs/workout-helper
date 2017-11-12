@@ -21,14 +21,14 @@ class ViewWorkoutsTest extends TestCase
     public function a_user_can_browse_all_workouts()
     {
         $response = $this->get('/workouts')
-            ->assertSee($this->workout->workout_name);
+            ->assertSee('Workout Date');
     }
 
     /** @test */
     public function a_user_can_view_one_workouts()
     {
         $response = $this->get('/workouts/' . $this->workout->id)
-            ->assertSee($this->workout->workout_name);
+            ->assertSee($this->workout->workout_date);
     }
 
     /** @test */

@@ -19,7 +19,6 @@ class WorkoutTest extends TestCase
         parent::setUp();
 
         $this->workout = create('App\Workout');
-
     }
 
     /** @test */
