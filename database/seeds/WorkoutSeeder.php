@@ -10,30 +10,47 @@ class WorkoutSeeder extends Seeder
     public function run()
     {
         $user = User::findOrFail(1);
-
         $workout1 = [
-            'workout_name' => 'Test Workout1',
-            'description' => 'A collection of exercises',
+            'workout_date' => '10-16-2016',
+            'type_of_class' => 'power',
+            'rounds' => 2,
+            'sets' => 2,
+            'notes' => 'notes',
+            'count_for_work' => true,
+            'color' => 'grey',
+            'prescribed' => false,
+            'time_to_complete_round' => 'not timed',
             'user_id' => $user->id,
-            // 'workout_date' => Carbon::now(),
         ];
 
         Workout::create($workout1);
 
         $workout2 = [
-            'workout_name' => 'Test Workout2',
-            'description' => 'A collection of exercises',
+            'workout_date' => '10-16-2016',
+            'type_of_class' => 'power',
+            'rounds' => 2,
+            'sets' => 2,
+            'notes' => 'notes',
+            'count_for_work' => true,
+            'color' => 'grey',
+            'prescribed' => false,
+            'time_to_complete_round' => 'not timed',
             'user_id' => $user->id,
-            // 'workout_date' => Carbon::now(),
         ];
 
         Workout::create($workout2);
 
         $workout3 = [
-            'workout_name' => 'Test Workout3',
-            'description' => 'A collection of exercises',
+            'workout_date' => '10-16-2016',
+            'type_of_class' => 'power',
+            'rounds' => 2,
+            'sets' => 2,
+            'notes' => 'notes',
+            'count_for_work' => true,
+            'color' => 'grey',
+            'prescribed' => false,
+            'time_to_complete_round' => 'not timed',
             'user_id' => $user->id,
-            // 'workout_date' => Carbon::now(),
         ];
 
         Workout::create($workout3);

@@ -1,6 +1,6 @@
 <!-- create.blade.php -->
 
-<form method="post" action="{{url('workouts')}}">
+<form method="post" action="{{url('workout')}}">
 
 <!DOCTYPE html>
 <html>
@@ -22,23 +22,67 @@
         <div class="row">
           <div class="col-md-2"></div>
           <div class="form-group col-md-2">
-            <label for="workout_name">Workout Name:</label>
-            <input type="text" class="form-control" name="workout_name">
+            <label for="workout_date">Workout Date:</label>
+            <input type="text" class="form-control" name="workout_date">
           </div>
         </div>
         <div class="row">
           <div class="col-md-2"></div>
             <div class="form-group col-md-2">
-              <label for="description">Description:</label>
-              <input type="body" class="form-control" name="description">
+              <label for="description">Type of Class:</label>
+              <input type="body" class="form-control" name="type_of_class">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-2"></div>
           <div class="form-group col-md-2">
-            <label for="exercises">Exercises:</label>
-            <input type="text" class="form-control" name="exercises">
+            <label for="exercises">Count for Work:</label>
+            <input type="text" class="form-control" name="count_for_work">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="form-group col-md-2">
+            <label for="workout_date">Color:</label>
+            <input type="text" class="form-control" name="color">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+            <div class="form-group col-md-2">
+              <label for="description">Prescribed:</label>
+              <input type="body" class="form-control" name="prescribed">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="form-group col-md-2">
+            <label for="exercises">Count for Work:</label>
+            <input type="text" class="form-control" name="time_of_round_1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="form-group col-md-2">
+            <label for="workout_date">Workout Date:</label>
+            <input type="text" class="form-control" name="workout_date">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+            <div class="form-group col-md-2">
+              <label for="description">Type of Class:</label>
+              <input type="body" class="form-control" name="type_of_class">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="form-group col-md-2">
+            <label for="exercises">Count for Work:</label>
+            <input type="text" class="form-control" name="count_for_work">
           </div>
         </div>
 

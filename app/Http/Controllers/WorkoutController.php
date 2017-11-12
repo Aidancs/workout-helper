@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Workout;
 use Illuminate\Http\Request;
 
-class WorkoutsController extends Controller
+class WorkoutController extends Controller
 {
     /**
      * Create a new ThreadsController instance.
@@ -22,7 +22,8 @@ class WorkoutsController extends Controller
      */
     public function index()
     {
-        $workouts = Workout::latest()->get();
+        $workouts = Workout::all();
+
         return view('workout.index', compact('workouts'));
     }
 
@@ -45,14 +46,21 @@ class WorkoutsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'workout_name' => 'required',
+            'workout_date' => 'required',
             'description' => 'required',
         ]);
 
         $workout = Workout::create([
-            'workout_name' => request('workout_name'),
-            'description' => request('description'),
-            'user_id' => auth()->id(),
+            'workout_date' => request('workout_date'),
+            'type_of_class' => request('type_of_class'),
+            'rounds' => request('rounds'),
+            'sets' => request('sets'),
+            'notes' => request('notes'),
+            'count_for_work' => request('count_for_work'),
+            'color' => request('color'),
+            'prescribed' => request('prescribed'),
+            'time_to_complete_round' => request('time_to_complete_round'),
+            'user_id' => request('user_id'),
         ]);
 
         return redirect($workout->path());
@@ -91,13 +99,29 @@ class WorkoutsController extends Controller
     {
         $workout = Workout::find($id);
         $this->validate(request(), [
-          'workout_name' => 'required',
-          'description' => 'required',
+            'workout_date' => 'required',
+            'type_of_class' => 'required',
+            'rounds' => 'required',
+            'sets' => 'required',
+            'notes' => 'required',
+            'count_for_work' => 'required',
+            'color' => 'required',
+            'prescribed' => 'required',
+            'time_to_complete_round' => 'required',
+            'user_id' => 'required',
         ]);
-        $workout->workout_name = $request->get('workout_name');
-        $workout->description = $request->get('description');
+        $workout->workout_date = request('workout_date');
+        $workout->type_of_class = request('type_of_class');
+        $workout->rounds = request('rounds');
+        $workout->sets = request('sets');
+        $workout->notes = request('notes');
+        $workout->count_for_work = request('count_for_work');
+        $workout->color = request('color');
+        $workout->prescribed = request('prescribed');
+        $workout->time_to_complete_round = request('time_to_complete_round');
+        $workout->user_id = request('user_id');
         $workout->save();
-        return redirect('workouts')->with('success','Workout has been updated');
+        return redirect('workout')->with('success','Workout has been updated');
     }
 
     /**
@@ -110,6 +134,6 @@ class WorkoutsController extends Controller
     {
         $workout = Workout::find($id);
         $workout->delete();
-        return redirect('workouts')->with('success','Workout has been  deleted');
+        return redirect('workout')->with('success','Workout has been  deleted');
     }
 }

@@ -33,23 +33,23 @@ class CreateWorkoutTest extends TestCase
         $response = $this->post('/workouts', $workout->toArray());
 
         $this->get($response->headers->get('Location'))
-            ->assertSee($workout->workout_name)
-            ->assertSee($workout->description);
+            ->assertSee('Workout Date')
+            ->assertSee('Notes');
     }
 
     /** @test */
-    function a_workout_requires_a_name()
+    function a_workout_requires_a_date()
     {
-        $this->publishWorkout(['workout_name' => null])
-            ->assertSessionHasErrors('workout_name');
+        $this->publishWorkout(['workout_date' => null])
+            ->assertSessionHasErrors('workout_date');
     }
 
-    /** @test */
-    function a_workout_requires_a_description()
-    {
-        $this->publishWorkout(['description' => null])
-            ->assertSessionHasErrors('description');
-    }
+    // /** @test */
+    // function a_workout_requires_a_description()
+    // {
+    //     $this->publishWorkout(['description' => null])
+    //         ->assertSessionHasErrors('description');
+    // }
 
     public function publishWorkout($overrides = [])
     {

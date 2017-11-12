@@ -7,15 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Workout extends Model
 {
-    protected $table = 'workouts';
+    protected $table = 'workout';
 
     protected $guarded = [];
 
     protected $fillable = [
-        'workout_name',
-        'description',
-        'user_id'
-        // 'workout_date',
+        'workout_date',
+        'type_of_class',
+        'rounds',
+        'sets',
+        'notes',
+        'count_for_work',
+        'color',
+        'prescribed',
+        'time_to_complete_round',
+        'user_id',
     ];
 
     protected $log_name;
@@ -30,18 +36,6 @@ class Workout extends Model
         $this->exercises()->create($exercise);
     }
 
-    public function setWorkoutName($value) {
-        $this->attribute['workout_name'] = $value;
-    }
-
-    public function setDescription($value) {
-        $this->attribute['description'] = $value;
-    }
-
-    // public function setWorkoutDate($value) {
-    //     $this->attribute['workout_date'] = $value;
-    // }
-
     public function athlete()
     {
         return $this->belongsTo('App\User', 'user_id');
@@ -53,6 +47,6 @@ class Workout extends Model
 
     public function path()
     {
-        return '/workouts/' . $this->id;
+        return '/workout/' . $this->id;
     }
 }

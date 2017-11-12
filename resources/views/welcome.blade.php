@@ -8,7 +8,7 @@
     <meta name="author" content="">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <title>IT Companion</title>
+    <title>Workout Helper</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h4>Welcome to the website for my Iron Tribe workout companion!</h4>
+        <h4>Welcome to the website for the Workout Helper!</h4>
         <p>This is a workout companion website. You will be able to enter a workout with as many exercises as you would like.
         </p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
@@ -66,8 +66,11 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-            <h2>Workout</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h2>Workout</h2>
+          <h5>Workout Date</h5>
+          <h5>Notes</h5>
+          <h5>Exercises:</h5>
+
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
