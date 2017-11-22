@@ -1,106 +1,136 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+
+<head>
+    <title>Workout Companion</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+</head>
 
-    <title>Workout Helper</title>
+<body class="bg-grey-darkest h-screen">
+    <h1 class="text-white text-center">Workout Companion</h1>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-  </head>
-
-  <body>
-    <!-- Navbar -->
-    <!-- <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">Navbar</a>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav> -->
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h4>Welcome to the website for the Workout Helper!</h4>
-        <p>This is a workout companion website. You will be able to enter a workout with as many exercises as you would like.
-        </p>
-        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
-      </div>
+    <main class="text-white px-6 py-4">
+        <p class="text-3xl">Chart your workouts to keep up with your goals. Each workout becomes it's own workout card. Sorting by exercises or weights coming soon.</p>
+    <div class="px-6 py-4">
+        <a class="button bg-indigo-darkest hover:bg-grey text-white font-bold py-2 px-4 rounded-full float-right" href="{{ route('workout.create') }}">
+            Create a workout card
+        </a>
     </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Workout</h2>
-          <h5>Workout Date</h5>
-          <h5>Notes</h5>
-          <h5>Exercises:</h5>
-
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+    <p>Example workout cards</p>
+    <div class="flex">
+        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="img/dumbells.jpg" alt="Dumbells">
+            <div class="px-6 py-4">
+                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+                    <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
+                    <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
+                    <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
+                    <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
+                    <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
+                    <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="img/overheadsquat.jpg" alt="Dumbells">
+            <div class="px-6 py-4">
+                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+                    <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
+                    <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
+                    <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
+                    <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
+                    <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
+                    <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+            </div>
         </div>
-      </div>
+        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="img/backsquat.jpg" alt="Dumbells">
+            <div class="px-6 py-4">
+                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+                    <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
+                    <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
+                    <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
+                    <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
+                    <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
+                    <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+            </div>
+        </div>
+        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="img/dumbells.jpg" alt="Dumbells">
+            <div class="px-6 py-4">
+                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+                    <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
+                    <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
+                    <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
+                    <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
+                    <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
+                    <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+            </div>
+        </div>
+    </div>
+        <!-- <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+          labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+          sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+          aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+          gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+          voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+        <h2>More content</h2>
+        <p>
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+          eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+          zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer
+          dipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>
+        <h3>Deeper information</h3>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+          ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+          consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+          qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </p>
+        <h2>Finally</h2>
+        <p>
+          Ora et labora, pero sin ora. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+          ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+          consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+          qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </p> -->
+    </main>
+    <footer>
+        <div>
+            <img src="" alt="">
+        </div>
+        <div>
+            <h2></h2>
 
-      <hr>
+        </div>
+    </footer>
+</body>
 
-      <footer>
-        <p>&copy; Company 2017</p>
-      </footer>
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
 </html>

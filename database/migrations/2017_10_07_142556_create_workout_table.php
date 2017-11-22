@@ -16,15 +16,11 @@ class CreateWorkoutTable extends Migration
         Schema::create('workout', function (Blueprint $table) {
             $table->increments('id');
             $table->string('workout_date');
-            $table->string('type_of_class'); // push or power
-            $table->integer('rounds');
-            $table->integer('sets');
-            $table->string('notes');
-            $table->boolean('count_for_work');
-            $table->string('color');
-            $table->boolean('prescribed');
-            $table->string('time_to_complete_round');
-            $table->integer('user_id');
+            $table->text('notes');
+            $table->boolean('type_of_class')->nullable; // 0 = false = push or 1 true = power
+            $table->boolean('count_for_work')->nullable; // 0 = false 1 = true
+            $table->boolean('prescribed')->nullable; // 0 = false 1 = true
+            $table->integer('user_id')->nullable;
             $table->timestamps();
         });
     }

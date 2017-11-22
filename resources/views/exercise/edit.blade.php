@@ -8,7 +8,7 @@
   <body>
     <div class="container">
       <h2>Edit An Exercise</h2><br  />
-      <form method="post" action="{{action('ExercisesController@update', $id)}}">
+      <form method="post" action="{{action('ExercisesController@update', $exercise)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         <div class="row">

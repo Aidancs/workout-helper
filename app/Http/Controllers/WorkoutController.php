@@ -45,10 +45,11 @@ class WorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'workout_date' => 'required',
-            'description' => 'required',
-        ]);
+        // dd($request->toArray());
+        // $this->validate($request, [
+        //     'workout_date' => 'required',
+        //     'description' => 'required',
+        // ]);
 
         $workout = Workout::create([
             'workout_date' => request('workout_date'),
@@ -72,10 +73,10 @@ class WorkoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Workout $workout) {
-
+    public function show(Workout $workout)
+    {
         return view('workout.show', compact('workout'));
-}
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -83,9 +84,10 @@ class WorkoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         $workout = Workout::find($id);
-        return view('workout.edit',compact('workout','id'));
+        return view('workout.edit', compact('workout', 'id'));
     }
 
     /**
@@ -121,7 +123,7 @@ class WorkoutController extends Controller
         $workout->time_to_complete_round = request('time_to_complete_round');
         $workout->user_id = request('user_id');
         $workout->save();
-        return redirect('workout')->with('success','Workout has been updated');
+        return redirect('workout')->with('success', 'Workout has been updated');
     }
 
     /**
@@ -134,6 +136,6 @@ class WorkoutController extends Controller
     {
         $workout = Workout::find($id);
         $workout->delete();
-        return redirect('workout')->with('success','Workout has been  deleted');
+        return redirect('workout')->with('success', 'Workout has been  deleted');
     }
 }
