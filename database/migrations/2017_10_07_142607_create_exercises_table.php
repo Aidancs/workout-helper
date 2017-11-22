@@ -17,9 +17,7 @@ class CreateExercisesTable extends Migration
             $table->increments('id');
             $table->string('exercise_name');
             $table->string('description')->nullable();
-            $table->string('weights')->nullable();
-            $table->string('times')->nullable();
-            $table->dateTime('exercise_date')->nullable();
+            $table->string('weight')->nullable();
             $table->timestamps();
         });
 

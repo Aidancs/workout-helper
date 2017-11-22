@@ -10,7 +10,7 @@ class AddExerciseToWorkoutTest extends TestCase
     use DatabaseTransactions;
 
     /** @test */
-    function unauthenticated_user_cannot_add_an_exercise_to_a_workout()
+    public function unauthenticated_user_cannot_add_an_exercise_to_a_workout()
     {
         $this->withoutExceptionHandling()
             ->expectException('Illuminate\Auth\AuthenticationException');
@@ -19,11 +19,11 @@ class AddExerciseToWorkoutTest extends TestCase
 
         $exercise = make('App\Exercise');
 
-        $this->post('/workouts/' . $workout->id . '/exercises', $exercise->toArray());
+        $this->post('/workout/' . $workout->id . '/exercises', $exercise->toArray());
     }
 
     /** @test */
-    function an_authenticated_user_can_add_an_exercise_to_a_workout()
+    public function an_authenticated_user_can_add_an_exercise_to_a_workout()
     {
         $this->be($user = create('App\User'));
 
@@ -31,7 +31,7 @@ class AddExerciseToWorkoutTest extends TestCase
 
         $exercise = make('App\Exercise');
 
-        $this->post('/workouts/' . $workout->id . '/exercises', $exercise->toArray());
+        $this->post('/workout/' . $workout->id . '/exercises', $exercise->toArray());
 
         $this->get($workout->path())
             ->assertSee($exercise->exercise_name);

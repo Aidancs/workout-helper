@@ -7,16 +7,16 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class CreateWorkoutTest extends TestCase
+class CreateExerciseTest extends TestCase
 {
     use DatabaseTransactions;
 
     /** @test */
-    public function a_guest_may_not_create_workouts()
+    public function a_guest_may_not_create_exercises()
     {
         $this->withExceptionHandling();
 
-        $this->get('/workout/create')
+        $this->get('/exercises/create')
             ->assertRedirect('/login');
 
         $this->post('/workout')
@@ -24,24 +24,24 @@ class CreateWorkoutTest extends TestCase
     }
 
     /** @test */
-    public function an_authenticated_user_can_create_new_workouts()
+    public function an_authenticated_user_can_create_new_exercises()
     {
         $this->signIn();
 
-        $workout = make('App\Workout');
+        $exercise = make('App\Exercise');
 
-        $response = $this->post('/workout', $workout->toArray());
+        $response = $this->post('/exercise', $exercise->toArray());
 
         $this->get($response->headers->get('Location'))
             ->assertSee('Workout Companion');
     }
 
     /** @test */
-    public function a_workout_requires_a_date()
-    {
-        $this->publishWorkout(['workout_date' => null])
-            ->assertSessionHasErrors('workout_date');
-    }
+    // public function a_exercise_requires_a_date()
+    // {
+    //     $this->publishExercise(['exercise_date' => null])
+    //         ->assertSessionHasErrors('exercise_date');
+    // }
 
     // /** @test */
     // function a_workout_requires_a_description()
@@ -50,12 +50,12 @@ class CreateWorkoutTest extends TestCase
     //         ->assertSessionHasErrors('description');
     // }
 
-    public function publishWorkout($overrides = [])
+    public function publishExercise($overrides = [])
     {
         $this->withExceptionHandling()->signIn();
 
-        $workout = make('App\Workout', $overrides);
+        $exercise = make('App\Exercise', $overrides);
 
-        return $this->post('/workout', $workout->toArray());
+        return $this->post('/exercise', $exercise->toArray());
     }
 }

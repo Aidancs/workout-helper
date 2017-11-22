@@ -20,28 +20,28 @@ class ViewWorkoutsTest extends TestCase
     /** @test */
     public function a_user_can_browse_all_workouts()
     {
-        $response = $this->get('/workouts')
+        $response = $this->get('/workout')
             ->assertSee('Workout Date');
     }
 
     /** @test */
     public function a_user_can_view_one_workouts()
     {
-        $response = $this->get('/workouts/' . $this->workout->id)
+        $response = $this->get('/workout/' . $this->workout->id)
             ->assertSee($this->workout->workout_date);
     }
 
     /** @test */
-    function a_user_can_view_exercises_associated_with_the_workout()
+    public function a_user_can_view_exercises_associated_with_the_workout()
     {
         $exercise = create('App\Exercise', ['workout_id' => $this->workout->id]);
 
-        $this->get('/workouts/' . $this->workout->id)
+        $this->get('/workout/' . $this->workout->id)
             ->assertSee($exercise->exercise_name);
     }
 
     /** @test */
-    function a_user_can_filter_workouts_accourding_to_a_tag()
+    public function a_user_can_filter_workouts_accourding_to_a_tag()
     {
         $this->signIn();
 
@@ -51,6 +51,6 @@ class ViewWorkoutsTest extends TestCase
 
         $this->get('/exercises/', $workout->toArray())
             ->assertSee($exerciseInWorkout->exercise_name);
-            // ->assertDontSee($exerciseNotInWorkout->exercise_name); Not sure why this bombs, it says 'doesn't contain'
+        // ->assertDontSee($exerciseNotInWorkout->exercise_name); Not sure why this bombs, it says 'doesn't contain'
     }
 }

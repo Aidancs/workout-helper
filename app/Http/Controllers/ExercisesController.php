@@ -13,6 +13,7 @@ class ExercisesController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -73,15 +74,16 @@ class ExercisesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
         $exercise = Exercise::find($id);
 
-        if(!$exercise) {
+        if (!$exercise) {
             return response()->json(['message' => 'Exercise does not exist']);
         }
 
         return response()->json(['data' => $exercise]);
-}
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -89,9 +91,12 @@ class ExercisesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         $exercise = Exercise::find($id);
-        return view('exercise.edit',compact('exercises','id'));
+
+        return view('exercise.edit')
+            ->withExercise($exercise);
     }
 
     /**
@@ -115,7 +120,7 @@ class ExercisesController extends Controller
         $exercise->weights = $request->get('weights');
         $exercise->times = $request->get('times');
         $exercise->save();
-        return redirect('exercises')->with('success','Exercise has been updated');
+        return redirect('exercises')->with('success', 'Exercise has been updated');
     }
 
     /**
@@ -128,6 +133,6 @@ class ExercisesController extends Controller
     {
         $exercise = Exercise::find($id);
         $exercise->delete();
-        return redirect('exercises')->with('success','Exercise has been  deleted');
+        return redirect('exercises')->with('success', 'Exercise has been  deleted');
     }
 }

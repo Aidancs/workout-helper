@@ -11,14 +11,10 @@ class WorkoutSeeder extends Seeder
     {
         $workout1 = [
             'workout_date' => '10-16-2016',
-            'type_of_class' => 'power',
-            'rounds' => 2,
-            'sets' => 2,
-            'notes' => 'notes',
+            'notes' => 'Notes for the workout',
+            'type_of_class' => true,
             'count_for_work' => true,
-            'color' => 'grey',
             'prescribed' => false,
-            'time_to_complete_round' => 'not timed',
             'user_id' => 1,
         ];
 
@@ -26,62 +22,57 @@ class WorkoutSeeder extends Seeder
 
         $workout2 = [
             'workout_date' => '10-12-2016',
-            'type_of_class' => 'power',
-            'rounds' => 2,
-            'sets' => 2,
             'notes' => 'notes',
+            'type_of_class' => true,
             'count_for_work' => true,
-            'color' => 'grey',
             'prescribed' => false,
-            'time_to_complete_round' => 'not timed',
             'user_id' => 2,
         ];
 
         Workout::create($workout2);
 
         $workout3 = [
-            'workout_date' => '10-18-2016',
-            'type_of_class' => 'power',
-            'rounds' => 2,
-            'sets' => 2,
+            'workout_date' => '10-12-2016',
             'notes' => 'notes',
+            'type_of_class' => true,
             'count_for_work' => true,
-            'color' => 'grey',
             'prescribed' => false,
-            'time_to_complete_round' => 'not timed',
-            'user_id' => 3,
+            'user_id' => 2,
         ];
 
         Workout::create($workout3);
 
         $workout4 = [
             'workout_date' => '11-13-2016',
-            'type_of_class' => 'power',
-            'rounds' => 2,
-            'sets' => 0,
             'notes' => 'A. 15 min 1RM Power Snatch. B. For Time(8 min cap) 15-10-5 Power Snatch at 60%, Clapping push ups',
+            'type_of_class' => true,
             'count_for_work' => true,
-            'color' => 'grey',
             'prescribed' => false,
-            'time_to_complete_round' => '6:04',
             'user_id' => 3,
         ];
 
         Workout::create($workout4);
 
         $workout5 = [
-            'workout_date' => '10-18-2016',
-            'type_of_class' => 'power',
-            'rounds' => 4,
-            'sets' => 0,
+            'workout_date' => '11-18-2016',
             'notes' => 'For Time(22 min cap). 10 Push Press. 10 Bent Over Rows. 400m Run. 1 min Rest.',
+            'type_of_class' => true,
             'count_for_work' => true,
-            'color' => 'grey',
             'prescribed' => true,
-            'time_to_complete_round' => '20:57',
             'user_id' => 3,
         ];
 
         Workout::create($workout5);
+
+        $workout6 = [
+            'workout_date' => '11-20-2016',
+            'notes' => 'For Time(21 min cap). 1st rd 5x (3 Power Clean, 1 Jerk, 1 Split Jerk complex.) 500m Row 2nd rd 4x (3 Power Clean, 1 Jerk, 1 Split Jerk complex.) 500m Row 3rd rd 3x (3 Power Clean, 1 Jerk, 1 Split Jerk complex.) 500m Row',
+            'type_of_class' => true,
+            'count_for_work' => true,
+            'prescribed' => true,
+            'user_id' => 3,
+        ];
+
+        Workout::create($workout6);
     }
 }

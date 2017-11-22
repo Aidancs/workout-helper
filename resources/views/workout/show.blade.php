@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading" style="text-align: center">{{ $workout->workout_date }}</div>
                 <div class="panel-body" style="text-align: center">
-                    {{ $workout->description }}
+                    {{ $workout->notes }}
                 </div>
             </div>
         </div>
