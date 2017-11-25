@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\App\Workout;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithExceptionHandling;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -50,6 +51,7 @@ class CreateWorkoutTest extends TestCase
     //         ->assertSessionHasErrors('description');
     // }
 
+    /** @test */
     public function publishWorkout($overrides = [])
     {
         $this->withExceptionHandling()->signIn();
@@ -57,5 +59,16 @@ class CreateWorkoutTest extends TestCase
         $workout = make('App\Workout', $overrides);
 
         return $this->post('/workout', $workout->toArray());
+    }
+
+    /** @test */
+    public function add_an_exercise_to_a_complex()
+    {
+        $workout = create('App\Workout');
+        $exercise = make('App\Exercise');
+
+        $workout->addExerciseToComplex($exercise);
+
+        $this->assertSame('Deadlift', $workout->complex->exercise_name);
     }
 }

@@ -1,0 +1,22 @@
+{
+    "name": "acsd",
+    "displayName": "acsd",
+    "description": "acsd",
+    "version": "0.0.1",
+    "publisher": "acsd",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "acsd",
+                "uiTheme": "vs-dark",
+                "path": "./themes/acsd-color-theme.json"
+            }
+        ]
+    }
+}

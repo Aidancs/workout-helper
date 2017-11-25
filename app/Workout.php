@@ -13,15 +13,11 @@ class Workout extends Model
 
     protected $fillable = [
         'workout_date',
-        'type_of_class',
-        'rounds',
-        'sets',
         'notes',
+        'type_of_class',
         'count_for_work',
-        'color',
         'prescribed',
-        'time_to_complete_round',
-        'user_id',
+        'user_id'
     ];
 
     protected $log_name;
@@ -31,9 +27,16 @@ class Workout extends Model
         'updated',
     ];
 
-    public function addExercise($exercise)
+    public $complex = [];
+
+    public function addExercise(Exercise $exercise)
     {
-        $this->exercises()->create($exercise);
+        $this->exercises()->attach($exercise->id);
+    }
+
+    public function addExerciseToComplex(Exercise $exercise)
+    {
+        $this->complex = $exercise;
     }
 
     public function athlete()
@@ -41,8 +44,9 @@ class Workout extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
-    public function exercises() {
-        return $this->hasMany(Exercise::class);
+    public function exercises()
+    {
+        return $this->belongsToMany(Exercise::class);
     }
 
     public function path()

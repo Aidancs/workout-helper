@@ -12,83 +12,87 @@
     <h1 class="text-white text-center">Workout Companion</h1>
 
     <main class="text-white px-6 py-4">
-        <p class="text-3xl">Chart your workouts to keep up with your goals. Each workout becomes it's own workout card. Sorting by exercises or weights coming soon.</p>
-    <div class="px-6 py-4">
-        <a class="button bg-indigo-darkest hover:bg-grey text-white font-bold py-2 px-4 rounded-full float-right" href="{{ route('workout.create') }}">
-            Create a workout card
-        </a>
-    </div>
-    <p>Example workout cards</p>
-    <div class="flex">
-        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="img/dumbells.jpg" alt="Dumbells">
-            <div class="px-6 py-4">
-                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+        <p class="text-3xl">Chart your workouts to keep up with your goals. Each workout becomes it's own workout card. Sorting by exercises or weights
+            coming soon.</p>
+        <div class="px-6 py-4">
+            <a class="button bg-indigo-darkest hover:bg-grey text-white font-bold py-2 px-4 rounded-full float-right" href="{{ route('workout.create') }}">
+                Create a workout card
+            </a>
+        </div>
+        <p>Example workout cards</p>
+        <div class="flex">
+            <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="img/dumbells.jpg" alt="Dumbells">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
                     <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
                     <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
                     <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
                     <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
                     <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
                     <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                </div>
             </div>
-        </div>
-        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="img/overheadsquat.jpg" alt="Dumbells">
-            <div class="px-6 py-4">
-                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+            <br>
+            <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="img/overheadsquat.jpg" alt="Dumbells">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
                     <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
                     <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
                     <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
                     <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
                     <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
                     <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                </div>
             </div>
-        </div>
-        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="img/backsquat.jpg" alt="Dumbells">
-            <div class="px-6 py-4">
-                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+            <br>
+            <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="img/backsquat.jpg" alt="Dumbells">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
                     <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
                     <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
                     <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
                     <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
                     <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
                     <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                </div>
             </div>
-        </div>
-        <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="img/dumbells.jpg" alt="Dumbells">
-            <div class="px-6 py-4">
-                <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+            <br>
+            <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="img/dumbells.jpg" alt="Dumbells">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
                     <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
                     <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
                     <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
                     <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
                     <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
                     <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
-                <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                </div>
             </div>
         </div>
-    </div>
         <!-- <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
           labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea

@@ -1,14 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- <div class="flex">
+            <div class="flex-1 max-w-md px-6 py-4 bg-grey rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="img/dumbells.jpg" alt="Dumbells">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-3xl text-black text-center mb-2">November 12th, 2017</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Mary Weightlifter</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Workout color: Grey</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Prescribed: No</div>
+                    <p class="font-bold text-black text-1xl">Part A: 15 min to find 1 RM Power Snatch</p>
+                    <p class="font-bold text-black text-1xl">Part B: For Time(8 min cap)</p>
+                    <p class="font-bold text-black text-center text-1xl">15-10-5 of</p>
+                    <p class="font-bold text-black text-center text-1xl">Power Snatch at 60%</p>
+                    <p class="font-bold text-black text-center text-1xl">Clapping Pushups</p>
+                    <p class="font-bold text-black text-1xl">Weight for Part A. and time to complete for Part B.</p>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part A: 115#</div>
+                    <div class="font-bold text-3xl text-black text-center mb-2">Part B: 6:04</div>
+                </div>
+            </div> -->
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading" style="text-align: center">{{ $workout->workout_date }}</div>
-                <div class="panel-body" style="text-align: center">
-                    {{ $workout->notes }}
-                </div>
+                <div class="panel-heading" style="text-align: center">Workout Date: {{ $workout->workout_date }}</div>
+                <div class="panel-heading" style="text-align: center">Notes: {{ $workout->notes }}</div>
+                <div class="panel-heading" style="text-align: center">Type of Class: {{ $workout->type_of_class ? 'Push' : 'Power' }}</div>
+                <div class="panel-heading" style="text-align: center">Count for Work: {{ $workout->count_for_work ? 'Yes' : 'No' }}</div>
+                <div class="panel-heading" style="text-align: center">Prescribed: {{ $workout->prescribed ? 'Yes' : 'No' }}</div>
+                <div class="panel-heading" style="text-align: center">Athlete: {{ $workout->athlete->name }}</div>
             </div>
         </div>
     </div>
@@ -23,10 +43,6 @@
                         @foreach ($workout->exercises as $exercise)
                             <tr>
                                 <td><a href="/exercises/">{{ $exercise->exercise_name }}</a></td>
-                                <td>{{ $exercise->description }}</td>
-                                <td>{{ $exercise->weights }}</td>
-                                <td>{{ $exercise->times }}</td>
-                                <td>{{ $exercise->exercise_date }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -49,10 +65,6 @@
                                     <textarea name="description" id="description" class="form-control"></textarea>
                                 <label for="weights">Weights</label>
                                     <input type="text" name="weights" id="weights" class="form-control"></input>
-                                <label for="times">Times</label>
-                                    <input type="text" name="times" id="times" class="form-control"></input>
-                                <label for="exercise_date">Exercise date</label>
-                                    <input type="text" date="exercise_date" id="exercise_date" class="form-control"></input>
                             </div>
                             <button type="submt" class="btn-btn-default">Add</button>
                         </form>
