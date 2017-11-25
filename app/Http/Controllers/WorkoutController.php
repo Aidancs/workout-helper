@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Workout;
 use Illuminate\Http\Request;
+use App\Exercise;
 
 class WorkoutController extends Controller
 {
@@ -34,7 +35,9 @@ class WorkoutController extends Controller
      */
     public function create()
     {
-        return view('workout.create');
+        $exercises = Exercise::all();
+
+        return view('workout.create', compact('exercises'));
     }
 
     /**
@@ -45,24 +48,28 @@ class WorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->toArray());
-        // $this->validate($request, [
-        //     'workout_date' => 'required',
-        //     'description' => 'required',
-        // ]);
+        $this->validate($request, [
+            'workout_date' => 'required',
+            'notes' => 'required',
+            'type_of_class' => 'required',
+            'count_for_work' => 'required',
+            'prescribed' => 'required',
+        ]);
 
         $workout = Workout::create([
             'workout_date' => request('workout_date'),
-            'type_of_class' => request('type_of_class'),
-            'rounds' => request('rounds'),
-            'sets' => request('sets'),
             'notes' => request('notes'),
+            'type_of_class' => request('type_of_class'),
             'count_for_work' => request('count_for_work'),
-            'color' => request('color'),
             'prescribed' => request('prescribed'),
-            'time_to_complete_round' => request('time_to_complete_round'),
-            'user_id' => request('user_id'),
+            'user_id' => 1,
         ]);
+
+        $exercises = Exercise::find($request->exercise_select);
+
+        foreach ($exercises as $exercise) {
+            $workout->addExercise($exercise);
+        }
 
         return redirect($workout->path());
     }
@@ -112,6 +119,7 @@ class WorkoutController extends Controller
             'time_to_complete_round' => 'required',
             'user_id' => 'required',
         ]);
+
         $workout->workout_date = request('workout_date');
         $workout->type_of_class = request('type_of_class');
         $workout->rounds = request('rounds');

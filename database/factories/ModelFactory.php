@@ -26,7 +26,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-
 $factory->state(App\User::class, 'unconfirmed', function () {
     return [
         'confirmed' => false
@@ -34,17 +33,12 @@ $factory->state(App\User::class, 'unconfirmed', function () {
 });
 
 $factory->define(App\Workout::class, function ($faker) {
-
     return [
         'workout_date' => 'Workout Date',
-        'type_of_class' => 'Power',
-        'rounds' => 2,
-        'sets' => 4,
+        'type_of_class' => true,
         'notes' => 'AMRAP',
         'count_for_work' => true,
-        'color' => 'grey',
         'prescribed' => false,
-        'time_to_complete_round' => '12 min',
         'user_id' => function () {
             return factory('App\User')->create()->id;
         },
@@ -52,16 +46,10 @@ $factory->define(App\Workout::class, function ($faker) {
 });
 
 $factory->define(App\Exercise::class, function ($faker) {
-
     return [
-        'exercise_name' => 'Exercise Name',
-        'description'  => 'An exercise',
-        'weights'  => '180 lb',
-        'times'  => '1:30',
-        'exercise_date' => '11/01/2017',
-        'workout_id' => function () {
-            return factory('App\Workout')->create()->id;
-        },
+        'exercise_name' => 'Deadlift',
+        'description' => '3Rm',
+        'weights' => '275 lb',
     ];
 });
 

@@ -135,4 +135,13 @@ class ExercisesController extends Controller
         $exercise->delete();
         return redirect('exercises')->with('success', 'Exercise has been  deleted');
     }
+
+    public function addExerciseToComplex(Workout $workout)
+    {
+        $workout->complex->addExercise([
+            'exercise_name' => request('exercise_name'),
+            'description' => request('description'),
+            'weights' => request('weights'),
+        ]);
+    }
 }
