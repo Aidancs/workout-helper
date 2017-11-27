@@ -18,7 +18,6 @@ Route::get('/', function () {
 });
 
 Route::group(['as' => 'user.'], function () {
-
     Route::get('/user')
         ->name('index')
         ->uses('UserController@index');
@@ -31,7 +30,7 @@ Route::group(['as' => 'user.'], function () {
         ->name('update')
         ->uses('UserController@update');
 
-        Route::get('/user/{user}/remove')
+    Route::get('/user/{user}/remove')
         ->name('remove')
         ->uses('UserController@remove');
 });
@@ -42,7 +41,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('workouts', 'WorkoutsController@index')->name('workouts');
 // Route::get('workouts/{workout}', 'WorkoutsController@show')->name('workout.show');
-
-Route::resource('exercises', 'ExercisesController');
-Route::resource('workout', 'WorkoutController');
-route::post('/workout/{workout}/exercises', 'ExercisesController@store');
+    Route::resource('exercises', 'ExercisesController');
+    Route::resource('workout', 'WorkoutController');
+    Route::post('/workout/{workout}/exercises', 'ExercisesController@store');
