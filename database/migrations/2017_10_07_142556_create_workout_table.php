@@ -16,11 +16,12 @@ class CreateWorkoutTable extends Migration
         Schema::create('workout', function (Blueprint $table) {
             $table->increments('id');
             $table->string('workout_date');
-            $table->text('notes');
-            $table->boolean('type_of_class')->nullable; // 0 = false = push or 1 true = power
-            $table->boolean('count_for_work')->nullable; // 0 = false 1 = true
-            $table->boolean('prescribed')->nullable; // 0 = false 1 = true
-            $table->integer('user_id')->nullable;
+            $table->string('workout_description');
+            $table->string('results');
+            $table->boolean('workout_type'); // push or power
+            $table->boolean('count_for_work'); // yes or no
+            $table->boolean('prescribed'); // yes or no
+            $table->integer('athlete');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateWorkoutTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workout');
+        Schema::dropIfExists('workouts');
     }
 }

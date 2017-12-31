@@ -13,11 +13,12 @@ class Workout extends Model
 
     protected $fillable = [
         'workout_date',
-        'notes',
-        'type_of_class',
+        'workout_description',
+        'results',
+        'workout_type',
         'count_for_work',
         'prescribed',
-        'user_id'
+        'athlete'
     ];
 
     protected $log_name;

@@ -44,3 +44,4 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('exercises', 'ExercisesController');
     Route::resource('workout', 'WorkoutController');
     Route::post('/workout/{workout}/exercises', 'ExercisesController@store');
+

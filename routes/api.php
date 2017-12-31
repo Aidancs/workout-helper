@@ -13,9 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::group(['middleware' => ['auth']], function () {
+    Route::middleware('auth:api')->get('/user', function (Request $request) {
+        return $request->user();
+    });
 
-});
+    Route::resource('exercises', 'ExercisesApiController');
+    Route::resource('register', 'Auth\RegisterApiController');
+    Route::resource('workout', 'WorkoutApiController');
+
+    Route::group(['middleware' => ['auth']], function () {
+    });
