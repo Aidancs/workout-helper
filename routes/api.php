@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 
     Route::resource('exercises', 'ExercisesApiController');
     Route::resource('register', 'Auth\RegisterApiController');
+    Route::resource('user', 'UserApiController');
     Route::resource('workout', 'WorkoutApiController');
 
     Route::group(['middleware' => ['auth']], function () {

@@ -10,20 +10,21 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterApiController extends Controller
 {
-    public function index()
-    {
-        return 'Hello nurse!';
-    }
+    // public function index()
+    // {
+    //     // is this even needed??
+    //     return 'Hello nurse!';
+    // }
 
-    public function store($data)
+    public function store(Request $request)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'height' => $data['height'],
-            'weight' => $data['weight'],
-            'age' => $data['age'],
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'height' => $request['height'],
+            'weight' => $request['weight'],
+            'age' => $request['age'],
         ]);
     }
 }

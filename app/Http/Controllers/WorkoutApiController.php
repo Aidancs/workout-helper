@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\WorkoutResource;
+use App\User;
 use App\Workout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class WorkoutApiController extends Controller
 {
-    public function index()
+    public function index(User $user)
     {
-        return Workout::get();
+        return Workout::where('athlete', $user->id)
+            ->get();
     }
 
     /**
